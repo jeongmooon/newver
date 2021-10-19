@@ -593,6 +593,46 @@ p{
 > - 테두리
 > - 배경(추가 속성) : 콘텐츠 영역과 안쪽 여백 영역에만 적용
 
+> Box 전체 크기 계산(가로 또는 세로)
+>
+> - 가로 : width + padding + border
+> - 세로 : height + padding + border
+
+```
+Ex)
+
+div{
+  width: 200px;
+  padding: 30px;
+  border: 1px solid red;
+  margin: 20px;
+}
+
+=> 박스 전체 가로길이 : 200px + 30px * 2 + 1px * 2 = 262px
+
+=> 박스 전체 가로길이 200px : 200px - 30px * 2 - 1px * 2 = 138px(width)
+
+```
+
+> box-sizing: border-box;
+>
+> - width 속성 값이 전체 길이 되도록 특성 변경
+
+```
+Ex)
+
+div{
+  width: 200px;
+  padding: 30px;
+  border: 1px solid red;
+  margin: 20px;
+  box-sizing: border-box;
+}
+
+=> 박스 전체 가로길이 : 200px
+
+```
+
 ## height / width
 
 > - auto : default - 값을 지정하지 않았을때 적용되는 값
@@ -702,4 +742,67 @@ border-bottom: 1px sold red;
 > flex-direction
 >
 > - row(default), row-reverse, column, column-resverse
->   flex-wrap
+>   flex-wrap : 줄바꿈
+>
+> - nowrap(default), wrap
+>
+> justify-content : 가로방향 정렬
+>
+> - flex-start, center, flex-end
+> - space-around, space-between
+>
+> align-item : 세로방향 정렬
+>
+> - flex-start, center, flex-end
+
+## 반응형 웹 디자인
+
+- pc 모니터, 테블릿 화면, 스마트 폰 화면들 여러 디바이스 화면에 콘텐츠를 잘 전달할 수 있도록 레이아웃을 적절하게 변경되도록 하는 웹 디자인 방식
+
+> 디바이스별 해상도 구분
+>
+> - 반응형 앱 : 대부분 가로길이 해상도로 구분
+> - 중단점(breakpoint) : 범위 설정
+>   - 디바이스 구분 : PC, Tablet, Smart Phone
+>   - 중단점은 단일한 한 지점을 설정하는 것이 아니고, 범위로 설정해야 함
+>   - pc : 1920px - 1024px
+>   - tabelet : 1024px - 768px
+>   - smart phone : 640px - 320px
+>
+> HTML, CSS 사용하는 기술
+>
+> - viewport
+>
+>   - 여러 디아이스 화면에 최적화되게 보일 수 없도록 HTML 페이지에 설정하는 구문
+>
+> - media query
+>
+>   - 해상도를 구분해서 필요한 CSS를 적용할 수 있게 하는 키워드
+>   - 해상도 범위를 열린 범위로 구현하면 넓은 범위에서 적용한 css를 작은 범위에서 공통으로 사용할 수 있음
+
+```
+@media screen and (가로길이 해상도 범위 : max-width){
+  적용 css 코드
+}
+
+** max-width : 최대 가로길이 => **픽셀 이하 범위
+```
+
+```
+
+/* pc styling */
+body{
+  background:red;
+}
+
+/* tablet styling */
+@media screen and (max-width:1024px){
+  body{
+    background:blue;
+  }
+}
+
+/* smart phone styling */
+
+
+```

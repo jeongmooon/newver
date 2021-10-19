@@ -174,7 +174,8 @@ video {
 
 .section01 {
   text-align: center;
-  padding: 120px 0;
+  padding: 100px 0;
+  background-color:rgb(228, 237, 237);
 }
 
 .section-paragraph {
@@ -182,8 +183,19 @@ video {
   margin: 0 auto;
 }
 
+.section-heading {
+  font-size: 40px;
+  font-wehgit: 500;
+  margin-bottom: 30px;
+}
+
+.section-paragraph{
+
+}
+
 .group{
   display: flex;
+  justify-content: center;
 }
 
 .grid-visual{
@@ -191,16 +203,48 @@ video {
   height:300px;
 }
 
+.grid-visual.video-wrap{
+  width:340px;
+  height:300px;
+  overflow: hidden;
+}
+
+
+.grid-visual.video {
+ width: auto;
+ height: 300px;
+}
+
 .header{
   display: flex;
   justify-content: space-between;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  background-color: #111111;
+  color: #999999;
+  height: 250px;
+  padding-top: 100px;
+  box-sizing: border-box;
 }
 
 .sub-logo{
   margin-left: 100px;
 }
 
+.sub-logo-title{
+  font-size: 20px;
+  font-weight: 500;
+  color: #ffffff;
+}
+
 .sns-list{
   margin-right: 100px;
 }
 
+
+@media screen and (max-width:1024px;)
+
+@media screen 
